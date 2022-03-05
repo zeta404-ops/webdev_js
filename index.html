@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+
+ <body>
+
+    <div>
+        <hr>
+            <button id='alertOnClick' onclick='alertOnClick()'>alert on click</button>
+        <hr>
+            <button id='logOnClick' onclick='logOnClick()'>log on click</button>
+        <hr>
+            <input id='focusButton' onfocus='logOnFocus()'>
+        <hr>
+            <input id='num1' type='number'>
+            <input id='num2' type='number'>
+            <button id='sumButton' onclick='sum()'>sum</button>
+            <button id='subtractButton' onclick='subtract()'>subtract</button>
+            <button id='multiplyButton' onclick='multiply()'>multiply</button>
+            <button id='divideButton' onclick='divide()'>divide</button>            
+        <hr>       
+            <input id='replaceText' type='text'>
+            <span id='textToReplace'>replace me</span>
+            <button id='textReplaceButton' onclick='replaceText()'>replace text</button>
+        <hr>
+            <button id='hideButton' onclick='hideElement()'>hide element</button>
+            <span id='hideMe'>hide me</span>
+        <hr>
+            <button id='toggleButton' onclick='toggleElement()'>toggle element</button>
+            <span id='toggleMe'>toggle me</span>
+        <hr>
+            <button id='toggleButton1' onclick='toggleElementWithParameters("toggleMe1")'>toggle element 1</button>
+            <span id='toggleMe1'>toggle me 1 </span>
+            <button id='toggleButton2' onclick='toggleElementWithParameters("toggleMe2")'>toggle element 2</button>
+            <span id='toggleMe2'>toggle me 2 </span>
+            <button id='toggleButton3' onclick='toggleElementWithParameters("toggleMe3")'>toggle element 3</button>
+            <span id='toggleMe3'>toggle me3 </span>
+        <hr>
+            <input id='addToList' type='text'>
+            <span id='theListElement'>The objects of the list should be visible here</span>
+            <button id='addToListButton' onclick='addToList()'>Add to list</button>
+            <button id='logTheListButton' onclick='logList()'>Log the list</button>
+            <button id='clearTheListButton' onclick='clearTheList()'>Empty the list</button>
+        <hr>
+            <input id='findFromList' type='text'>
+            <span id='didWeFindIt'>Here should read FOUND or NOT FOUND</span>
+            <button id='findFromListButton' onclick='findFromList()'>Find from list</button>
+        <hr>
+
+    </div>
+
+</body>
+
+<!-- Implement all the functions below -->
+<script>
+
+    // Example implmentation
+    function alertOnClick(){
+        alert('alert on click')
+    }
+
+    /** Log the the text 'log on click' 
+     * Search the internet on how to log something with JavaScript */
+    function logOnClick(){
+
+        console.log("log on click");
+        
+        // IMPLEMENT
+        
+    }
+
+    /** Log the the text 'log on focus' 
+     * Search the internet on how to log something with JavaScript */
+    function logOnFocus(){
+       console.log("log on focus");
+        // IMPLEMENT
+        
+    }
+
+    /** Sum the values given the by the user to input's a and b. 
+     *  Use a JavaScript alert box to show the correct answer.
+     *  Make sure you are calculating numbers and not something else... */
+    function sum(){
+        // IMPLEMENT
+
+          let num1 = document.getElementById('num1').value;
+          let num2 = document.getElementById('num2').value;
+          let sumResult = parseInt(num1) + parseInt(num2);
+          alert(sumResult);
+
+    }
+
+    // See instructions above sum() but subtract b from a
+    function subtract() {
+        // IMPLEMENT
+
+          let num1 = document.getElementById('num1').value;
+          let num2 = document.getElementById('num2').value;
+          let subResult = parseInt(num1) - parseInt(num2);
+          alert(subResult);
+
+    }
+
+    // See instructions above sum() but multiply a from b
+    function multiply() {
+        // IMPLEMENT
+
+          let num1 = document.getElementById('num1').value;
+          let num2 = document.getElementById('num2').value;
+          let mulResult = parseInt(num1) * parseInt(num2);
+          alert(mulResult);
+
+    }
+
+    // See instructions above sum() but divide b with a
+    function divide() {
+        // IMPLEMENT
+
+          let num1 = document.getElementById('num1').value;
+          let num2 = document.getElementById('num2').value;
+          let divResult = parseInt(num1) / parseInt(num2);
+          alert(divResult);
+
+
+    }
+
+    /** Search the internet on how to replace text with JavaScript and HTML */
+    function replaceText(){
+        // IMPLEMENT
+
+        let change = document.getElementById('replaceText').value;
+        document.getElementById('textToReplace').innerHTML = change;
+
+    }
+
+    /** Search the internet on how to hide a HTML-element with JavaScript */  
+    function hideElement(){
+         // IMPLEMENT
+         let hideCode = document.getElementById('hideMe');    hideCode.style.visibility = " hidden ";
+    }
+
+    /** Search the internet on how to toggle a HTML-element with JavaScript */  
+    function toggleElement(){
+         // IMPLEMENT
+
+         let x = document.getElementById("toggleMe"); 
+         if (x.style.display === "none") 
+         { x.style.display = "block"; 
+        } else { x.style.display = "none"; }
+    }
+
+
+    /** Search the internet on how to toggle a HTML-element with JavaScript */ 
+    function toggleElementWithParameters(elementId) {
+        // IMPLEMENT
+        let x = document.getElementById(elementId);
+
+            //toggle for first 1 cuz i didnt find good example on google
+            if (x.style.display === "none") {
+            x.style.display = "block";
+           } else {
+            x.style.display = "none";}
+           }
+  
+
+
+    // Use this list in the four following functions (addToList, logList, findFromList, clearTheList)
+    let theList = []
+
+    /** Add an item to the array named theList. Then update the correct HTMLElement with the array */
+    function addToList(){
+        // IMPLEMENT
+        const addList = document.getElementById('addToList').value;
+        //push to the list and named it theList according instructions
+        theList.push(addList); 
+        document.getElementById('theListElement').innerHTML = theList;
+     
+
+    }
+
+    /** Log all objects in theList to the console */
+    function logList(){
+        // IMPLEMENT
+        //logging the list above
+        console.log(theList);
+    }
+
+    /** Find if the user given value is in theList. 
+     * If you find it, update the correct HTMLElement to FOUND
+     * If you did not find it, update the correct HTMLElement to NOT FOUND */
+    function findFromList(){
+        // IMPLEMENT
+        const find = document.getElementById('findFromList').value;
+        for(let i = 0; i < theList.length; i++){
+            if (theList.includes(find)) {
+                document.getElementById('didWeFindIt').innerHTML = "FOUND";
+            }else{
+                document.getElementById('didWeFindIt').innerHTML = "NOT FOUND";
+  } 
+ }
+}
+
+    /** Empty theList and then update the correct HTMLElement  */
+    function clearTheList() {
+        // IMPLEMENT
+
+        theList = []
+        let clearThis = document.getElementById('theListElement')
+        clearThis.innerHTML = theList
+    }
+
+</script>
+
+</html>
+
